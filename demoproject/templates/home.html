@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>face Detection</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="heading">
+        <h1>Face Detection</h1>
+    </div>
+
+    <div id="buttons">
+        <form method="get" action="{% url 'start_detection' %}">
+        <button type="submit" id="startButton">Start</button>
+        </form>
+        <form method="get" action="{% url 'stop_detection' %}">
+        <button type="submit" id="stopButton">Stop</button>
+        </form>
+    </div>
+</body>
+</html>

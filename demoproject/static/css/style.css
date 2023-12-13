@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("https://imgs.search.brave.com/A0e3FydxvO7Iod1ux-BAIIfZV2T0y6r2xB3E23D3S-0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzI3Lzk3LzQ1/LzM2MF9GXzUyNzk3/NDU0OF9RSGNaeG5a/WUFPcWV3MFhPUDl1/VEw0Q2xmcXNiVnZN/cy5qcGc") no-repeat center center fixed;
+    background-size: contain; /* Change to 'contain' to make the image smaller */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(23, 53, 60);
+}
+
+.heading {
+    margin-top: 0; /* Add margin to the top of the heading */
+    text-align: center;
+    color: white;
+    padding: 12px;
+    background: none;
+}
+
+#buttons {
+    margin-right: 27px;
+    display: flex;
+    padding-top: 107px;
+    padding-right: 246px; /* Add right padding to create the gap */
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end; /* Change to 'flex-end' for right alignment */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 27px;
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: rgb(15, 138, 183);
+    border: 3px solid white;
+    color: white;
+}
+
+button:disabled {
+    background-color: gray;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
