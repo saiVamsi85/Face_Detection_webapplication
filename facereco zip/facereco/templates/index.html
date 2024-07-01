@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("https://imgs.search.brave.com/A0e3FydxvO7Iod1ux-BAIIfZV2T0y6r2xB3E23D3S-0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzI3Lzk3LzQ1/LzM2MF9GXzUyNzk3/NDU0OF9RSGNaeG5a/WUFPcWV3MFhPUDl1/VEw0Q2xmcXNiVnZN/cy5qcGc") no-repeat center center fixed;
+            background-size: contain;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: rgb(23, 53, 60);
+            justify-content: space-between;
+        }
+
+        .heading {
+            margin-top: 0;
+            text-align: center;
+            color: white;
+            padding: 12px;
+            background: none;
+        }
+
+        #buttons {
+            margin-right: 27px;
+            display: flex;
+            padding-top: 107px;
+            padding-right: 246px;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            justify-content: flex-end;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 27px;
+            cursor: pointer;
+            border-radius: 100px;
+            margin-bottom: 250px;
+            background-color: rgb(15, 138, 183);
+            border: 2px solid white;
+            color: white;
+        }
+
+        button:hover {
+            background-color: rgb(23, 100, 128);
+            transition: ease-in-out 150ms;
+        }
+
+        button:disabled {
+            background-color: gray;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Media Queries for responsiveness */
+        /* @media (max-width: 1200px) {
+            #buttons {
+                padding-right: 150px;
+            }
+        } */
+
+        @media (max-width: 992px) {
+            /* #buttons {
+                margin-top: 100px;
+                margin-left: 139px;
+                padding-left: 423px;
+                padding-right: 171px;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: 0px;
+            } */
+
+            /* button {
+                margin: 15px;
+                width: 80%;
+            } */
+        }
+
+        @media (max-width: 900px) {
+            #buttons {
+                margin: 0;
+                padding: 20px;
+                position: absolute;
+                margin-right: 20px;
+                bottom: 0;
+                width: 90%;
+                justify-content: center;
+                background-color: rgba(23, 53, 60, 0.8);
+            }
+
+            button {
+                margin: 10px;
+                width: auto;
+                flex: 1;
+                max-width: 45%;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 726px) {
+            #buttons {
+                padding-right: 20px;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: 0;
+            }
+
+            button {
+                margin: 5px;
+                width: 95%;
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+    <script>
+        function startDetection() {
+            fetch('/start', {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    console.log("Face detection started");
+                } else {
+                    console.error("Failed to start face detection");
+                }
+            });
+        }
+
+        function stopDetection() {
+            fetch('/stop', {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    console.log("Face detection stopped");
+                } else {
+                    console.error("Failed to stop face detection");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="heading">
+        <h1>Face Detection</h1>
+    </div>
+
+    <div id="buttons">
+        <button type="button" id="startButton" onclick="startDetection()">Start</button>
+        <button type="button" id="stopButton" onclick="stopDetection()">Press q to stop</button>
+    </div>
+</body>
+</html>
