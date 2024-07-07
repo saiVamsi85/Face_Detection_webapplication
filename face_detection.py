@@ -3,7 +3,7 @@ import cv2
 # Load the Haar Cascade Classifier for face detection
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-# Open the default camera (usually the built-in webcam, camera index 0)
+# Try to open the default camera (usually the built-in webcam, camera index 0)
 cap = cv2.VideoCapture(0)
 
 # Check if the camera opened successfully
