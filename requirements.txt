@@ -1,0 +1,3 @@
+Flask==3.0.3
+Gunicorn==22.0.0
+opencv-python==4.8.1.78
